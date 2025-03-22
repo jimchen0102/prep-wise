@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 const notoSansTC = Noto_Sans_TC({
   variable: "--font-noto-sans-tc",
@@ -19,7 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-Hant" className="dark">
-      <body className={`${notoSansTC.className} antialiased`}>{children}</body>
+      <body className={`${notoSansTC.className} antialiased pattern`}>
+        {children}
+
+        <Toaster />
+      </body>
     </html>
   );
 }
